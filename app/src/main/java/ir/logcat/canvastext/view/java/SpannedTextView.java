@@ -1,4 +1,4 @@
-package ir.logcat.canvastext.view;
+package ir.logcat.canvastext.view.java;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -56,13 +56,13 @@ public class SpannedTextView extends View {
 
         tintMe("Lorem");
         tintMe("گرافیک");
-        hightlightMe("consectetur");
-        hightlightMe("متن ساختگی");
+        highlightMe("consectetur");
+        highlightMe("متن ساختگی");
         replaceMe("LOL");
         subscriptMe("بلکه");
         superscriptMe("tempor");
         scaleXMe("accumsan");
-        highLightHashtags();
+        highlightHashtags();
 
         int maxWidth = screenWidth - leftMargin - rightMargin;
         int spacingAdd = 0;
@@ -78,14 +78,14 @@ public class SpannedTextView extends View {
             staticLayout = new StaticLayout(text, textPaint, maxWidth, Layout.Alignment.ALIGN_NORMAL, spacingMult, spacingAdd, false);
     }
 
-    private void highLightHashtags() {
+    private void highlightHashtags() {
         Matcher matcher = getMatches("#([A-Za-z0-9_-۰-۹ا-ی]+)");
         while (matcher.find()) {
             text.setSpan(new ClickSpan(Color.BLUE,matcher.group()), matcher.start(), matcher.end(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
     }
 
-    private void hightlightMe(String textToHighlight) {
+    private void highlightMe(String textToHighlight) {
 
         Matcher matcher = getMatches(textToHighlight);
         while (matcher.find()) {
@@ -200,7 +200,7 @@ public class SpannedTextView extends View {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                invalidate();
+
                 return true;
             }
         } catch (Exception e) {

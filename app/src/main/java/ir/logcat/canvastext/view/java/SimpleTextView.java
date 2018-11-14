@@ -1,4 +1,4 @@
-package ir.logcat.canvastext.view;
+package ir.logcat.canvastext.view.java;
 
 import android.content.Context;
 import android.graphics.Canvas;

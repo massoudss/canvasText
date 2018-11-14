@@ -1,4 +1,4 @@
-package ir.logcat.canvastext.view;
+package ir.logcat.canvastext.view.java;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -29,7 +29,6 @@ public class MultilineTextView extends View {
     }
 
     private void init() {
-
         textPaint.setColor(ContextCompat.getColor(getContext(), R.color.black));
         textPaint.setTextSize(Utils.spToPx(getContext(), 20));
         textPaint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/iran_sans_light.ttf"));
@@ -48,25 +47,23 @@ public class MultilineTextView extends View {
                     .setIncludePad(false);
             staticLayout = sb.build();
         } else {
-            staticLayout = new StaticLayout(text, textPaint, maxWidth, Layout.Alignment.ALIGN_NORMAL, spacingMult, spacingAdd, false);
+            staticLayout = new StaticLayout(text,textPaint,maxWidth,Layout.Alignment.ALIGN_NORMAL,spacingMult,spacingAdd,false);
         }
-
         //if your text will change use DynamicLayout instead of StaticLayout
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= 28) {
             DynamicLayout.Builder sb = DynamicLayout.Builder.obtain(text,textPaint, maxWidth)
                     .setAlignment(Layout.Alignment.ALIGN_NORMAL)
                     .setLineSpacing(spacingAdd, spacingMult)
                     .setIncludePad(false);
             dynamicLayout = sb.build();
         } else {
-            dynamicLayout = new DynamicLayout(text, text, textPaint, maxWidth, Layout.Alignment.ALIGN_NORMAL, spacingMult, spacingAdd, false);
+            dynamicLayout = new DynamicLayout(text,text,textPaint,maxWidth,Layout.Alignment.ALIGN_NORMAL,spacingMult,spacingAdd,false);
         }
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         canvas.save();
         canvas.translate(leftMargin, topMargin);
         staticLayout.draw(canvas);
@@ -74,8 +71,7 @@ public class MultilineTextView extends View {
 
         canvas.drawLine(0,
                 Utils.dpToPx(getContext(), 48) + staticLayout.getHeight(),
-                screenWidth, Utils.dpToPx(getContext(), 48)
-                        + staticLayout.getHeight(), textPaint);
+                screenWidth, Utils.dpToPx(getContext(), 48) + staticLayout.getHeight(), textPaint);
 
         canvas.save();
         canvas.translate(leftMargin, topMargin * 2 + staticLayout.getHeight());

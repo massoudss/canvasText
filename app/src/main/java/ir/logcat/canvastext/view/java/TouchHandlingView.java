@@ -1,4 +1,4 @@
-package ir.logcat.canvastext.view;
+package ir.logcat.canvastext.view.java;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,8 +8,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.text.Layout;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.MotionEvent;
@@ -18,8 +16,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import ir.logcat.canvastext.R;
-import ir.logcat.canvastext.utils.ClickSpan;
-import ir.logcat.canvastext.utils.TextPath;
 import ir.logcat.canvastext.utils.Utils;
 
 public class TouchHandlingView extends View {
