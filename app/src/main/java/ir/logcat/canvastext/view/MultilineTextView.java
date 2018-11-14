@@ -47,11 +47,20 @@ public class MultilineTextView extends View {
                     .setLineSpacing(spacingAdd, spacingMult)
                     .setIncludePad(false);
             staticLayout = sb.build();
-        } else
+        } else {
             staticLayout = new StaticLayout(text, textPaint, maxWidth, Layout.Alignment.ALIGN_NORMAL, spacingMult, spacingAdd, false);
+        }
 
         //if your text will change use DynamicLayout instead of StaticLayout
-        dynamicLayout = new DynamicLayout(text, text, textPaint, maxWidth, Layout.Alignment.ALIGN_NORMAL, spacingMult, spacingAdd, false);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            DynamicLayout.Builder sb = DynamicLayout.Builder.obtain(text,textPaint, maxWidth)
+                    .setAlignment(Layout.Alignment.ALIGN_NORMAL)
+                    .setLineSpacing(spacingAdd, spacingMult)
+                    .setIncludePad(false);
+            dynamicLayout = sb.build();
+        } else {
+            dynamicLayout = new DynamicLayout(text, text, textPaint, maxWidth, Layout.Alignment.ALIGN_NORMAL, spacingMult, spacingAdd, false);
+        }
     }
 
     @Override
@@ -63,7 +72,10 @@ public class MultilineTextView extends View {
         staticLayout.draw(canvas);
         canvas.restore();
 
-        canvas.drawLine(0, Utils.dpToPx(getContext(), 48) + staticLayout.getHeight(), screenWidth, Utils.dpToPx(getContext(), 48) + staticLayout.getHeight(), textPaint);
+        canvas.drawLine(0,
+                Utils.dpToPx(getContext(), 48) + staticLayout.getHeight(),
+                screenWidth, Utils.dpToPx(getContext(), 48)
+                        + staticLayout.getHeight(), textPaint);
 
         canvas.save();
         canvas.translate(leftMargin, topMargin * 2 + staticLayout.getHeight());
