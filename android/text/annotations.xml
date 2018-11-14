@@ -1,5 +1,0 @@
-<root>
-    <item name='android.text.DynamicLayout'>
-        <annotation name='java.lang.Deprecated' />
-    </item>
-</root>
