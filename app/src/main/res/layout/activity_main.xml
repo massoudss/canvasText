@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/simpleText"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="simple Text" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/multilineText"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="multiline Text" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/ellipsizedText"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="ellipsized Text" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/autoFitText"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="auto-Fit Text" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/spannedText"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="spanned Text" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/shader"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="Text shader example" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/handlingTouch"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="handling Touch events" />
+</LinearLayout>

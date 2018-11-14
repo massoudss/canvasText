@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.logcat.canvastext">
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SimpleTextActivity" />
+        <activity android:name=".activity.MultilineTextActivity" />
+        <activity android:name=".activity.EllipsizedTextActivity" />
+        <activity android:name=".activity.AutoFitTextActivity" />
+        <activity android:name=".activity.SpannedTextActivity" />
+        <activity android:name=".activity.TextShaderActivity" />
+        <activity android:name=".activity.TouchHandlingActivity" />
+    </application>
+
+</manifest>
